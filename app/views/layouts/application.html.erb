@@ -13,6 +13,19 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <nav>
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item" do %>
+          <h1>Da' Club House</h1>
+        <% end %>
+      </div>
+      <div class="navbar-end">
+        <p class="control">
+          <%= link_to 'New Post', new_post_path, class: "button" %>
+          <%= link_to 'Sign In', user_session_path, class: "button" %>
+        </p>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
