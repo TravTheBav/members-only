@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.all
+    @users = User.all
   end
 
   # GET /posts/1 or /posts/1.json
@@ -21,15 +22,20 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = current_user.posts.new(post_params)
+    if current_user.nil?
+      redirect_to new_user_session_url
+    else
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+      @post = current_user.posts.new(post_params)
+  
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
+          format.json { render :show, status: :created, location: @post }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

@@ -3,11 +3,22 @@
 <h1>Posts</h1>
 
 <div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+  <% if user_signed_in? %>
+    <% @posts.each do |post| %>
+      <%= render post %>
+      <% author = (@users.select { |user| user.id == post.user_id }).pop %>
+      <p><%= author[:username] %></p>
+      <p>
+        <%= link_to "Show this post", post %>
+      </p>
+    <% end %>
+  <% else %>
+    <% @posts.each do |post| %>
+      <%= render post %>
+      <p>
+        <%= link_to "Show this post", post %>
+      </p>
+    <% end %>
   <% end %>
 </div>
 
