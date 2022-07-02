@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+
+  validates :username, length: { in: 3..15 }, uniqueness: true
+  validates :email, presence: true, length: { maximum: 40 }, uniqueness: true
+  validates :password, length: { in: 8..20 }
 end
