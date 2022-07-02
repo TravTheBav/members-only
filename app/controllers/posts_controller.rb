@@ -23,11 +23,10 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     if current_user.nil?
-      redirect_to new_user_session_url
+      redirect_to new_user_session_url, alert: "You must be signed in to create posts"
     else
-
       @post = current_user.posts.new(post_params)
-  
+
       respond_to do |format|
         if @post.save
           format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
