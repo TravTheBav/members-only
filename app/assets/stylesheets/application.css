@@ -17,6 +17,25 @@
 html, body {
     margin: 0px;
     height: 100%;
+    background-color: rgb(240, 240, 219);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+main {
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.shared-links {
+    background-color: rgb(163, 139, 88);
+    padding: 1rem 1rem;
+    line-height: 1.25;
+}
+
+.shared-links span, .shared-links a {
+    font-size: large;
 }
 
 p {
@@ -47,7 +66,6 @@ nav h1 {
 nav h1, nav a {
     color: wheat;
     text-decoration: none;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 nav .button {
@@ -58,5 +76,41 @@ nav .button {
 }
 
 nav .button:hover {
+    background-color: rgb(153, 105, 33);
+}
+
+.sign-up-body, .sign-in-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.field * {
+    margin-bottom: 16px;
+    margin-top: 4px;
+    font-size: x-large;
+}
+
+.field:nth-last-child(2) {
+    margin-bottom: 24px;
+}
+
+.sign-up-body .actions, .sign-in-body .actions {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="submit"] {
+    font-size: larger;
+    padding: 10px 20px;
+    background-color: rgb(124, 84, 26);
+    border-radius: 4px;
+    color: wheat;
+    border-style: none;
+}
+
+input[type="submit"]:hover {
     background-color: rgb(153, 105, 33);
 }
