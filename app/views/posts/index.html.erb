@@ -6,9 +6,9 @@
       <% if user_signed_in? %>
         <% @posts.each do |post| %>
           <div class="post-block">
-            <%= render post %>
+            <%= render post %><br/>
             <% author = (@users.select { |user| user.id == post.user_id }).pop %>
-            <p><%= author[:username] %></p>
+            <p><em>Posted by: </em><%= author[:username] %></p>
             <p>
               <%= link_to "Show this post", post %>
             </p>
@@ -17,7 +17,7 @@
       <% else %>
         <% @posts.each do |post| %>
           <div class="post-block">
-            <%= render post %>
+            <%= render post %><br/>
             <p>
               <%= link_to "Show this post", post %>
             </p>
