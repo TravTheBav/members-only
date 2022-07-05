@@ -11,8 +11,6 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <nav>
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
@@ -26,6 +24,8 @@
         </p>
       </div>
     </nav>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <main>
       <%= yield %>
     </main>
