@@ -114,7 +114,7 @@ nav .button:hover {
     justify-content: center;
 }
 
-input[type="submit"] {
+input[type="submit"], button {
     font-size: larger;
     padding: 10px 20px;
     background-color: rgb(124, 84, 26);
@@ -139,4 +139,5 @@ input[type="submit"]:hover {
     border: 2px solid rgb(135, 135, 135);
     background-color: rgb(235, 235, 235);
     margin-bottom: 1rem;
+    line-height: 1.25;
 }

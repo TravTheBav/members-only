@@ -2,7 +2,7 @@
   <p>
     <strong><%= post.title %></strong>
   </p>
-
+  <br/>
   <p>
     <% if params[:action] == "index" && post.body.length >= 60 %>
       <%= post.body[(0..60)] + "..." %>
@@ -10,5 +10,4 @@
       <%= post.body %>
     <% end %>
   </p>
-
 </div>
