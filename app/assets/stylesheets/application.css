@@ -91,7 +91,7 @@ nav .button:hover {
     background-color: rgb(153, 105, 33);
 }
 
-.sign-up-body, .sign-in-body {
+.sign-up-body, .sign-in-body, .new-post-body, .edit-post-body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -99,7 +99,7 @@ nav .button:hover {
     gap: 20px;
 }
 
-.field * {
+.field *, .new-post-body form *, .edit-post-body form * {
     margin-bottom: 16px;
     margin-top: 4px;
     font-size: x-large;
@@ -115,7 +115,7 @@ nav .button:hover {
 }
 
 input[type="submit"], button {
-    font-size: larger;
+    font-size: large;
     padding: 10px 20px;
     background-color: rgb(124, 84, 26);
     border-radius: 4px;

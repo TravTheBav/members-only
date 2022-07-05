@@ -1,9 +1,10 @@
-<h1>New post</h1>
+<div class="new-post-body">
+  <h1>New post</h1>
+  
+  <%= render "form", post: @post %>
+</div>
 
-<%= render "form", post: @post %>
 
-<br>
-
-<div>
+<div class="shared-links">
   <%= link_to "Back to posts", posts_path %>
 </div>
